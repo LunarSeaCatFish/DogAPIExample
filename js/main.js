@@ -18,5 +18,12 @@ async function getRandomDogImage() {
     return data;
 }
 function displayDogImage(dogData) {
+    let displayDiv = document.getElementById("display");
+    let img = document.createElement("img");
+    img.src = dogData.message;
+    console.log(img);
+    img.style.width = "300px";
+    displayDiv.insertBefore(img, displayDiv.firstChild);
 }
-function displayError(error) { }
+function displayError(error) {
+}

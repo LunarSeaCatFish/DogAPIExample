@@ -57,6 +57,20 @@ async function getRandomDogImage() {
 
 function displayDogImage(dogData:RandomImageResponse) {
     // Todo: Display image on page
+    let displayDiv = document.getElementById("display");
+
+    // Create an image element in memory
+    let img = document.createElement("img");
+    img.src = dogData.message;
+    console.log(img);
+
+    // Use CSS to resize the image
+    img.style.width = "300px";
+
+    // Add the image as the first child of the display div but keep the previous image
+    displayDiv.insertBefore(img, displayDiv.firstChild); // insert the new image before the current first image
 }
 
-function displayError(error:Error) {}
+function displayError(error:Error) { 
+    // TODO: Display a nice error for the user
+}
